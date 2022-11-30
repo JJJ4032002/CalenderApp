@@ -1,0 +1,10 @@
+@media (min-width: 768px) {
+  .BannerImage {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .BannerImage {
+    width: 75%;
+  }
+}

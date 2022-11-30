@@ -1,0 +1,8 @@
+.FormWrapper {
+  grid-area: Form;
+}
+.FormWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

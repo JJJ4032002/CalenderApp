@@ -1,0 +1,26 @@
+.GridWrapper {
+  padding: 1.5em;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "Form"
+    "Banner";
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .GridWrapper {
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "Banner Form";
+    align-items: start;
+  }
+}
+@media (min-width: 1024px) {
+  .GridWrapper {
+    align-items: center;
+  }
+}

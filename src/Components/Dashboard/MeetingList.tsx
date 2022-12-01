@@ -4,7 +4,21 @@ import { meetings } from "./Meeting";
 import EmptyListImage from "../../assets/EmptyListImg.svg";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
-function MeetingList({ meetings }: { meetings: meetings }) {
+function MeetingList({
+  meetings,
+  DeleteMeetings,
+  UpdateMeetings,
+}: {
+  meetings: meetings;
+  DeleteMeetings: (id: string) => void;
+  UpdateMeetings: (element: {
+    id: string;
+    title: string;
+    description: string;
+    startTime: Date | undefined;
+    endTime: Date | undefined;
+  }) => void;
+}) {
   return (
     <>
       {" "}
@@ -35,8 +49,22 @@ function MeetingList({ meetings }: { meetings: meetings }) {
                   <p>{element.endTime.toLocaleTimeString("en-US")}</p>
                 </div>
                 <div className="CardBlock BlockButton">
-                  <Button icon="pi pi-pencil" iconPos="left" label="Update" />
-                  <Button icon="pi pi-trash" iconPos="left" label="Delete" />
+                  <Button
+                    icon="pi pi-pencil"
+                    iconPos="left"
+                    label="Update"
+                    onClick={() => {
+                      UpdateMeetings(element);
+                    }}
+                  />
+                  <Button
+                    onClick={() => {
+                      DeleteMeetings(element.id);
+                    }}
+                    icon="pi pi-trash"
+                    iconPos="left"
+                    label="Delete"
+                  />
                 </div>
               </Card>
             );

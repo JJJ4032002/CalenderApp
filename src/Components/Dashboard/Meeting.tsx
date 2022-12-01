@@ -34,6 +34,7 @@ function Meeting({
     startTime: undefined,
     endTime: undefined,
   });
+  let [updateId, setUpdateId] = useState<string | null>(null);
   let [errors, setErrors] = useState({
     title: false,
     description: false,
@@ -93,11 +94,15 @@ function Meeting({
     });
   }
 
-  function handleSubmitButton(event: React.MouseEvent<HTMLButtonElement>) {
+  function handleSubmitButton(
+    event: React.MouseEvent<HTMLButtonElement>,
+    updateId: string | null
+  ) {
     event.preventDefault();
     if (
       meetingDetails.startTime !== undefined &&
-      meetingDetails.endTime !== undefined
+      meetingDetails.endTime !== undefined &&
+      updateId === null
     ) {
       let newMeeting = {
         id: uuidv4(),
@@ -109,14 +114,70 @@ function Meeting({
       setMeetings((prev) => {
         return [...prev, newMeeting];
       });
-      setMeetingDetails({
-        title: "",
-        description: "",
-        startTime: undefined,
-        endTime: undefined,
+    } else if (
+      meetingDetails.startTime !== undefined &&
+      meetingDetails.endTime !== undefined &&
+      updateId !== null
+    ) {
+      let updatedMeeting = {
+        title: meetingDetails.title,
+        description: meetingDetails.description,
+        startTime: meetingDetails.startTime,
+        endTime: meetingDetails.endTime,
+      };
+      setMeetings((prev) => {
+        return prev.map((element) => {
+          if (element.id === updateId) {
+            return { ...element, ...updatedMeeting };
+          } else {
+            return { ...element };
+          }
+        });
       });
-      setDisplayBasic(false);
+      setUpdateId(null);
     }
+    setMeetingDetails({
+      title: "",
+      description: "",
+      startTime: undefined,
+      endTime: undefined,
+    });
+    setDisplayBasic(false);
+  }
+
+  function DeleteMeeting(id: string) {
+    let newArray = meetings.filter((element) => {
+      return element.id !== id;
+    });
+    setMeetings(newArray);
+  }
+
+  function UpdateMeetings(element: {
+    id: string;
+    title: string;
+    description: string;
+    startTime: Date | undefined;
+    endTime: Date | undefined;
+  }) {
+    setMeetingDetails({
+      title: element.title,
+      description: element.description,
+      startTime: element.startTime,
+      endTime: element.endTime,
+    });
+    setDisplayBasic(true);
+    setUpdateId(element.id);
+  }
+
+  function HideDialog() {
+    setDisplayBasic(false);
+    setMeetingDetails({
+      title: "",
+      description: "",
+      startTime: undefined,
+      endTime: undefined,
+    });
+    setUpdateId(null);
   }
 
   let disabled =
@@ -130,12 +191,14 @@ function Meeting({
       : false;
   return (
     <div className="MeetingWrapper">
-      <MeetingList meetings={meetings}></MeetingList>
+      <MeetingList
+        meetings={meetings}
+        DeleteMeetings={DeleteMeeting}
+        UpdateMeetings={UpdateMeetings}
+      ></MeetingList>
       <Dialog
         visible={displayBasic}
-        onHide={() => {
-          setDisplayBasic(false);
-        }}
+        onHide={HideDialog}
         header="Add a Meeting"
         className="AddMeetingModal"
       >
@@ -225,7 +288,9 @@ function Meeting({
             )}
           </div>
           <Button
-            onClick={handleSubmitButton}
+            onClick={(event) => {
+              handleSubmitButton(event, updateId);
+            }}
             disabled={disabled}
             label="Add Meeting"
           />

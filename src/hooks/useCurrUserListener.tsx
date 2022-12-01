@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { app } from "../firebase/InitializeFirebase";
 const auth = getAuth(app);
@@ -9,8 +9,6 @@ function useCurrUserListener(handleUser: (user: User | null) => void) {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        console.log(uid);
         handleUser(user);
         // ...
       } else {

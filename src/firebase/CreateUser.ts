@@ -11,7 +11,6 @@ async function createUser(
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
-      const user = userCredential.user;
       return true;
       // ...
     })

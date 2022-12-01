@@ -1,0 +1,11 @@
+.DashboardHeader {
+  padding: 1.5em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+hr {
+  margin: 0em 1.5em;
+  border-color: rgba(0, 0, 0, 0.12);
+}

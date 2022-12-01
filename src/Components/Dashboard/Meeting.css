@@ -1,0 +1,27 @@
+.MeetingWrapper {
+  background-color: #f1f1f2;
+  flex: 1;
+}
+.AddMeetingModal {
+  width: 100%;
+}
+.AddMeetingForm {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (min-width: 528px) {
+  .AddMeetingModal {
+    width: 65%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .AddMeetingModal {
+    width: 45%;
+    max-width: 500px;
+  }
+}

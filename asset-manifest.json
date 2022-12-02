@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/CalenderApp/static/css/main.e23eacaa.css",
+    "main.js": "/CalenderApp/static/js/main.bcab05d9.js",
+    "static/js/787.aa1d4325.chunk.js": "/CalenderApp/static/js/787.aa1d4325.chunk.js",
+    "static/media/primeicons.svg": "/CalenderApp/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/BannerImg.svg": "/CalenderApp/static/media/BannerImg.dfb00c809d8a730a63d87aa025ce06fa.svg",
+    "static/media/primeicons.eot": "/CalenderApp/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/CalenderApp/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/CalenderApp/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/BannerImg2.svg": "/CalenderApp/static/media/BannerImg2.fab8e658becabc9ae0585ef8d92464a6.svg",
+    "static/media/Gilroy-Regular.woff": "/CalenderApp/static/media/Gilroy-Regular.31d54a4b841c0e438f13.woff",
+    "static/media/primeicons.woff2": "/CalenderApp/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/roboto-v20-latin-ext_latin-700.woff": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-700.8aba6dc5d991e4367d7a.woff",
+    "static/media/roboto-v20-latin-ext_latin-500.woff": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-500.e492ac63197a57e7f4d3.woff",
+    "static/media/roboto-v20-latin-ext_latin-regular.woff": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-regular.ae804dc012b1b5255474.woff",
+    "static/media/EmptyListImg.svg": "/CalenderApp/static/media/EmptyListImg.98cabe8e659b9414fe0df223a6d18804.svg",
+    "static/media/roboto-v20-latin-ext_latin-500.woff2": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-500.0b45721325446d537b54.woff2",
+    "static/media/roboto-v20-latin-ext_latin-700.woff2": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-700.1d1ef7788f0ff084b881.woff2",
+    "static/media/roboto-v20-latin-ext_latin-regular.woff2": "/CalenderApp/static/media/roboto-v20-latin-ext_latin-regular.5cb5c8f08bb4e6cb64c3.woff2",
+    "index.html": "/CalenderApp/index.html",
+    "main.e23eacaa.css.map": "/CalenderApp/static/css/main.e23eacaa.css.map",
+    "main.bcab05d9.js.map": "/CalenderApp/static/js/main.bcab05d9.js.map",
+    "787.aa1d4325.chunk.js.map": "/CalenderApp/static/js/787.aa1d4325.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e23eacaa.css",
+    "static/js/main.bcab05d9.js"
+  ]
+}

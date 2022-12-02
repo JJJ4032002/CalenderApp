@@ -10,6 +10,10 @@ A Simple Calender app which has features such as -
 
 It is built with React (PrimeReact Framework) and Firebase (Authentication).
 
+## Live
+
+[Click here](https://JJJ4032002.github.io/CalenderApp)
+
 ## Demo
 
 ![Demo1](./Demo/Demo1.png)

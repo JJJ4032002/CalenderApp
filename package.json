@@ -2,6 +2,7 @@
   "name": "calender-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://JJJ4032002.github.io/CalenderApp",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -23,7 +24,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.0"
+    "@types/uuid": "^9.0.0",
+    "gh-pages": "^4.0.0"
   }
 }
